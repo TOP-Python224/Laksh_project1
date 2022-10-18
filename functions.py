@@ -4,7 +4,7 @@ from configparser import ConfigParser
 from data import STATS, config_file
 
 
-def load_ini(file: str, stats: dict) -> dict:
+def load_ini(file: str, stats: dict) -> None:
     """Читает данные из ini-файла в глобальную переменную данных."""
     config = ConfigParser()
     config.read(file, encoding='utf-8')

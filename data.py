@@ -6,6 +6,7 @@ STATS = {}
 config_file = './players.ini'
 
 
+
 # глобальные константы
 APP_TITLE = "КРЕСТИКИ-НОЛИКИ"
 PROMPT = ' > '

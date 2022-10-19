@@ -1,6 +1,7 @@
 """Дополнительный модуль: вспомогательные функции."""
 
 from configparser import ConfigParser
+
 from data import STATS, config_file
 
 
@@ -21,6 +22,9 @@ def write_ini(file: str, stats: dict) -> None:
     config.read_dict(stats)
     with open(file, 'w', encoding='utf-8') as ini_file:
         config.write(ini_file)
+
+
+# ОТВЕТИТЬ: я надеюсь, что историю коммитов и мои комментарии к тому коду вы изучили весьма внимательно?
 
 
 if __name__ == '__main__':

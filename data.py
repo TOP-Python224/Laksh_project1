@@ -3,8 +3,19 @@
 
 # глобальные переменные данных
 STATS = {}
-config_file = './players.ini'
+SAVES = {}
 
+
+
+PLAYERS = []
+TOKENS = ('X', 'O')
+
+DIM = 3
+RANGE = range(DIM)
+RANGE_FLAT = range(DIM**2)
+
+TURNS = []
+BOARD = ['X', 'O', 'O', ' ', 'X', ' ', ' ', ' ', 'X']
 
 
 # глобальные константы

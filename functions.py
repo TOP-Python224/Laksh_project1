@@ -24,10 +24,6 @@ def load_ini() -> bool:
         player = tuple(section.split(';'))
         turn = [i for i in saves[section]['turns'].split(',')]
         SAVES[player] = turn
-
-
-
-
     if STATS:
         return False
     else:
@@ -49,28 +45,25 @@ def write_ini() -> None:
         saves.write(ini_file)
 
 
-
 def draw_board(align_right: bool = False) -> str:
     """Формирует и возвращает строку, содержащую псевдографическое изображение игрового поля со сделанными ходами."""
     max_width = len(max(BOARD, key=lambda elem: len(elem)))
-
-    h_line = '—' * (DIM * (max_width + 2) ) + '\n'
+    h_line = '—' * (DIM * (max_width + 2)) + '\n'
     result = ''
     if align_right:
         align = get_terminal_size()[0] - 2
     else:
         align = len(h_line)
     for i in RANGE:
-        row = ' | '.join(BOARD[i * DIM: (i + 1) * DIM])
+        row = ' | '.join(BOARD[i*DIM:(i+1)*DIM])
         result += f"{row.rjust(align)}\n"
-        if i != (DIM - 1):
+        if i != DIM - 1:
             result += h_line.rjust(align + 1)
-
     return result
 
-print(write_ini())
-print(load_ini())
-print(draw_board(False))
 
-
-
+# ИСПОЛЬЗОВАТЬ: все тесты отдельных модулей убираются под проверку импорта
+if __name__ == '__main__':
+    print(write_ini())
+    print(load_ini())
+    print(draw_board(False))
